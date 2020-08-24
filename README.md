@@ -27,11 +27,9 @@ I will be using React to form the Front End of this application.
 I will be writing my backend in Java using Spring Boot as my framework.
 * Spring Web -- Used in building RESTful applications
 * Spring Security -- Used for customizing access control through authentication
+* JWT -- JsonWebToken allows for further implementation of Security
 * Spring MongoDB -- NoSQL Database additions to allow connection with MongoDB
-* Lombok -- Reduces amount of boilerplate code that needs to be written
 * Spring Session -- Manages User session and the informaiton in the session
-* Okta -- OAuth2 authentication framework extends OAuth2
-* OAuth2 Resource Server -- Brings in all the OAuth2 resources for Servers
 
 
 ## WireFrame and Database

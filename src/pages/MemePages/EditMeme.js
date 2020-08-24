@@ -31,16 +31,33 @@ export default class EditMeme extends Component {
     }
 
     handleChange = (e) => {
-        if (e.target.name === "tag1") {    
-            this.state.hashTags[0] = e.target.value 
+        let hashTags = [...this.state.hashTags]
+        let tag
+        if (e.target.name === "tag1") {
+            tag = {...hashTags[0]}
+            tag = e.target.value
+            hashTags[0] = tag
+            this.setState({hashTags})
         } else if (e.target.name === "tag2") {
-            this.state.hashTags[1] = e.target.value
+            tag = {...hashTags[1]}
+            tag = e.target.value
+            hashTags[1] = tag
+            this.setState({hashTags})
         } else if (e.target.name === "tag3") {
-            this.state.hashTags[2] = e.target.value
+            tag = {...hashTags[2]}
+            tag = e.target.value
+            hashTags[2] = tag
+            this.setState({hashTags})
         } else if (e.target.name === "tag4") {
-            this.state.hashTags[3] = e.target.value
+            tag = {...hashTags[3]}
+            tag = e.target.value
+            hashTags[3] = tag
+            this.setState({hashTags})
         } else if (e.target.name === "tag5") {
-            this.state.hashTags[4] = e.target.value
+            tag = {...hashTags[4]}
+            tag = e.target.value
+            hashTags[4] = tag
+            this.setState({hashTags})
         }
     }
 

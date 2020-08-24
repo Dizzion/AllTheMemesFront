@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import MemeModel from '../../model/MemesModel'
+import { getCurrentUser } from '../../service/AuthService'
 
 class NewComment extends Component {
     state = {
@@ -8,13 +9,13 @@ class NewComment extends Component {
     }
 
     componentDidMount() {
-        if (this.props.user.username === null || this.props.user.username === undefined) {
+        if (getCurrentUser() === null || getCurrentUser() === undefined) {
             this.setState({
                 userPosted: "Anonymous"
             })
         } else {
             this.setState({
-                userPosted: this.props.user.username
+                userPosted: getCurrentUser()
             })
         }
     }
@@ -28,7 +29,10 @@ class NewComment extends Component {
     handSubmit = (e) => {
         e.preventDefault()
 
-        MemeModel.createCom(this.state)
+        MemeModel.createCom(this.props.match.params.id ,this.state)
+            .then(data => {
+                this.props.history.push(`/memes/${this.props.match.params.id}`)
+            })
     }
 
     render() {

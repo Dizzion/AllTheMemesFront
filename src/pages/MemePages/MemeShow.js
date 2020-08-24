@@ -29,7 +29,7 @@ class MemeShow extends Component {
                 {this.state.meme ? <MemeImg url={this.state.meme.url} /> : 'Loading.....'}
                 {this.state.meme ? <Hashtag tags={this.state.meme.hashTags} /> : 'Loading.....'}
                 {this.state.meme ? <LikeDis likes={this.state.meme.likes} dislikes={this.state.meme.disLikes} /> : 'Loading.....'}
-                <NewComment user={JSON.parse(sessionStorage.getItem("user"))}/>
+                <NewComment />
                 {this.state.meme ? commentList : 'Loading.....'}
             </div>
         )

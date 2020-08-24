@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import MemeModel from '../../model/MemesModel'
-import { getCurrentUser } from '../../service/AuthService'
+import AuthService from '../../service/AuthService'
 
 class NewComment extends Component {
     state = {
@@ -9,13 +9,13 @@ class NewComment extends Component {
     }
 
     componentDidMount() {
-        if (getCurrentUser() === null || getCurrentUser() === undefined) {
+        if (AuthService.getCurrentUser() === null || AuthService.getCurrentUser() === undefined) {
             this.setState({
                 userPosted: "Anonymous"
             })
         } else {
             this.setState({
-                userPosted: getCurrentUser()
+                userPosted: AuthService.getCurrentUser()
             })
         }
     }

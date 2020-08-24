@@ -8,7 +8,11 @@ import NewComment from '../../components/ShowInfo/NewComment'
 
 class MemeShow extends Component {
     state = {
-        meme: {}
+        url: "",
+        tags: [],
+        likes: 0,
+        disLikes: 0,
+        comments: []
     }
 
     componentDidMount() {
@@ -17,20 +21,26 @@ class MemeShow extends Component {
 
     fetchData = () => {
         MemeModel.show(this.props.match.params.id)
-            .then(data => this.setState({ meme: data.data }))
+            .then(data => this.setState({ 
+                url: data.data.url,
+                tags: data.data.hashTags,
+                likes: data.data.likes,
+                disLikes: data.data.disLikes,
+                comments: data.data.comments
+             }))
     }
 
     render() {
-        let commentList = this.state.meme.comments.map(comment => {
-            return <Comment {...comment}/>
+        let commentList = this.state.comments.map((comment, i) => {
+            return <Comment {...comment} key={i}/>
         })
         return (
             <div>
-                {this.state.meme ? <MemeImg url={this.state.meme.url} /> : 'Loading.....'}
-                {this.state.meme ? <Hashtag tags={this.state.meme.hashTags} /> : 'Loading.....'}
-                {this.state.meme ? <LikeDis likes={this.state.meme.likes} dislikes={this.state.meme.disLikes} /> : 'Loading.....'}
-                <NewComment />
-                {this.state.meme ? commentList : 'Loading.....'}
+                {this.state.url ? <MemeImg url={this.state.url} /> : 'Loading.....'}
+                {this.state.tags ? <Hashtag tags={this.state.tags} /> : 'Loading.....'}
+                {this.state.url ? <LikeDis likes={this.state.likes} dislikes={this.state.disLikes} /> : 'Loading.....'}
+                {/* <NewComment /> */}
+                {this.state.comments ? commentList : 'Loading.....'}
             </div>
         )
     }

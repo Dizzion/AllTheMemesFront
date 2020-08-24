@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MemesModel from '../model/MemesModel'
 import { Link } from 'react-router-dom'
+import MemeImg from '../components/MemeImg'
 
 class Home extends Component {
     state = {

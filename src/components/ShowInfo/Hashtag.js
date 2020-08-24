@@ -1,17 +1,19 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
-async function Hashtag() {
+class Hashtag extends Component {
 
-    let tagList = await this.props.tags.map((tag) => {
-        <li><Link to={`/memes/search/${tag}`}>#{tag}</Link></li>
-    })
+    render() {
+        let tagList = this.props.tags.map((tag, i) => {
+            return <li key={i}><Link to={`/memes/search/${tag}`}>#{tag}</Link></li>
+        })
 
-    return (
-        <ul>
-            { tagList }
-        </ul>
-    )
+        return (
+            <ul>
+                { tagList }
+            </ul>
+        )
+    }
 }
 
 export default Hashtag

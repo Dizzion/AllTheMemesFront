@@ -13,7 +13,9 @@ class MemeSearch extends Component {
     }
 
     fetchData = () => {
-        MemeModel.search().then(data => this.setState({ memes: data.data }))
+        MemeModel.search(this.props.match.params.hashtag)
+            .then(data => this.setState({ 
+                memes: data.data }))
     }
     render() {
         let memeList = this.state.memes.map((meme, i) => {

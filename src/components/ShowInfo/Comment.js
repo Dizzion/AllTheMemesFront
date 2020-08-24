@@ -4,8 +4,8 @@ class Comment extends Component {
     render() {
         return (
             <>
-                <p>{this.props.comments.body}</p>
-                <h5>{this.props.comments.userPosted}</h5>
+                <p>{this.props.body}</p>
+                <h5>{this.props.userPosted}</h5>
             </>
         )
     }

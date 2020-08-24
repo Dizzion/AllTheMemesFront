@@ -4,7 +4,7 @@ class MemeImg extends Component {
     render() {
         return (
             <>
-                <img src={this.props.url} alt="Meme Image Broken"/>
+                <img src={this.props.url} alt="Meme Broken"/>
             </>
         )
     }

@@ -9,13 +9,14 @@ class NewComment extends Component {
     }
 
     componentDidMount() {
-        if (AuthService.getCurrentUser() === null || AuthService.getCurrentUser() === undefined) {
+        const user = JSON.parse(sessionStorage.getItem("user"))
+        if (user && user.username) {
             this.setState({
-                userPosted: "Anonymous"
+                userPosted: user.username
             })
         } else {
             this.setState({
-                userPosted: AuthService.getCurrentUser()
+                userPosted: "Anonymous"
             })
         }
     }

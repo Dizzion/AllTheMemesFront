@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import AuthService from '../service/AuthService'
 import './Header.scss'
 import { Link } from 'react-router-dom'
-import MemeModel from '../model/MemesModel'
 
 export default class Header extends Component {
     state = {
@@ -16,6 +15,7 @@ export default class Header extends Component {
     }
 
     render() {
+        const user = JSON.parse(sessionStorage.getItem("user"))
         return (
             <header>
                 <div className="logo">
@@ -23,7 +23,7 @@ export default class Header extends Component {
                 </div>
                 <div className="routes">
                     <ul>
-                        { AuthService.getCurrentUser() ?    
+                        { user ?    
                             <li><Link to={'/memes/new'}>Add a Meme!</Link></li>
                         :
                             <li/>
@@ -31,7 +31,7 @@ export default class Header extends Component {
                         
                         <li>
                             <Link to={`/memes/search`}>
-                                <button href={`/memes/search/${this.state.search}`} htmlFor="search">Search: #</button>
+                                <button href={`/memes/search/${this.state.search}`}>Search: #</button>
                             </Link>
                             <input type="text"
                                 name="search"
@@ -40,7 +40,7 @@ export default class Header extends Component {
                                 placeholder="Search Memes by their Tags" />
                         </li>
 
-                        { AuthService.getCurrentUser() ?
+                        { user ?
                             <>
                                 <li><Link to={'/profile'}>Profile</Link></li>
                                 <li><a href="/memes" onClick={AuthService.logout()}>Logout</a></li>

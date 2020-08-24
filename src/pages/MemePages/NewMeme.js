@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import MemeModel from '../../model/MemesModel'
 
 export default class NewMeme extends Component {
     state = {
@@ -20,18 +21,23 @@ export default class NewMeme extends Component {
             this.state.hashTags[3] = e.target.value
         } else if (e.target.name === "tag5") {
             this.state.hashTags[4] = e.target.value
-        }else {
+        } else {
             this.setState({
                 [e.target.name]: e.target.value
             })
         }
     }
 
+    handleSubmit = (e) => {
+        MemeModel.create(this.state)
+            .then(data => this.props.history.push('/memes'))
+    }
+
     render() {
         return (
             <div>
-                <form>
-                    <h2>Submit a New Meme!</h2>
+                <h2>Submit a New Meme!</h2>
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-input">
                         <label htmlFor="url">URL:</label>
                         <input
@@ -75,6 +81,7 @@ export default class NewMeme extends Component {
                             </li>
                         </ul>
                     </div>
+                    <button type="submit">Post It!</button>
                 </form>
             </div>
         )

@@ -71,6 +71,7 @@ export default class EditMeme extends Component {
     render() {
         return (
             <div>
+                <img src={this.state.url ? this.state.url : 'Loading.....'}/>
                 <h2>Edit the HashTags of this Meme</h2>
                 <form onSubmit={this.handleSubmit}>
                 <div className="form-input">
@@ -108,6 +109,7 @@ export default class EditMeme extends Component {
                         </li>
                     </ul>
                 </div>
+                <button type="submit">Post It!</button>
                 </form>
             </div>
         )

@@ -18,8 +18,8 @@ export default (
         <Route path='/signup' component={ Signup } />
         <Route path='/profile' component={ Profile } />
         <Route path='/memes/search/:hashtag' component={ MemeSearch } />
-        <Route exact path='/memes/:id' component={ MemeShow } />
         <Route path='/memes/new' component={ NewMeme } />
+        <Route exact path='/memes/:id' component={ MemeShow } />
         <Route path='/memes/:id/edit' component={ EditMeme } />
     </Switch>
 )

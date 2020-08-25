@@ -34,30 +34,30 @@ export default class EditMeme extends Component {
         let hashTags = [...this.state.hashTags]
         let tag
         if (e.target.name === "tag1") {
-            tag = {...hashTags[0]}
+            tag = { ...hashTags[0] }
             tag = e.target.value
             hashTags[0] = tag
-            this.setState({hashTags})
+            this.setState({ hashTags })
         } else if (e.target.name === "tag2") {
-            tag = {...hashTags[1]}
+            tag = { ...hashTags[1] }
             tag = e.target.value
             hashTags[1] = tag
-            this.setState({hashTags})
+            this.setState({ hashTags })
         } else if (e.target.name === "tag3") {
-            tag = {...hashTags[2]}
+            tag = { ...hashTags[2] }
             tag = e.target.value
             hashTags[2] = tag
-            this.setState({hashTags})
+            this.setState({ hashTags })
         } else if (e.target.name === "tag4") {
-            tag = {...hashTags[3]}
+            tag = { ...hashTags[3] }
             tag = e.target.value
             hashTags[3] = tag
-            this.setState({hashTags})
+            this.setState({ hashTags })
         } else if (e.target.name === "tag5") {
-            tag = {...hashTags[4]}
+            tag = { ...hashTags[4] }
             tag = e.target.value
             hashTags[4] = tag
-            this.setState({hashTags})
+            this.setState({ hashTags })
         }
     }
 
@@ -71,45 +71,50 @@ export default class EditMeme extends Component {
     render() {
         return (
             <div>
-                <img src={this.state.url ? this.state.url : 'Loading.....'}/>
+                <img src={this.state.url ? this.state.url : 'Loading.....'} />
                 <h2>Edit the HashTags of this Meme</h2>
                 <form onSubmit={this.handleSubmit}>
-                <div className="form-input">
-                    <label htmlFor="tags">Hashtags:</label>
-                    <ul name="tags">
-                        <li><input
+                    <div className="form-input">
+                        <label htmlFor="tag1">Hashtag:</label>
+                        <input
                             type="text"
                             name="tag1"
                             onChange={this.handleChange}
-                            value={ this.state.hashTags ? this.state.hashTags[0] : 'Loading.....' } />
-                        </li>
-                        <li><input
+                            value={this.state.hashTags ? this.state.hashTags[0] : 'Loading.....'} />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="tag2">Hashtag:</label>
+                        <input
                             type="text"
                             name="tag2"
                             onChange={this.handleChange}
-                            value={ this.state.hashTags ? this.state.hashTags[1] : 'Loading.....' } />
-                        </li>
-                        <li><input
+                            value={this.state.hashTags ? this.state.hashTags[1] : 'Loading.....'} />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="tag3">Hashtag:</label>
+                        <input
                             type="text"
                             name="tag3"
                             onChange={this.handleChange}
-                            value={ this.state.hashTags ? this.state.hashTags[2] : 'Loading.....' } />
-                        </li>
-                        <li><input
+                            value={this.state.hashTags ? this.state.hashTags[2] : 'Loading.....'} />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="tag4">Hashtag:</label>
+                        <input
                             type="text"
                             name="tag4"
                             onChange={this.handleChange}
-                            value={ this.state.hashTags ? this.state.hashTags[3] : 'Loading.....' } />
-                        </li>
-                        <li><input
+                            value={this.state.hashTags ? this.state.hashTags[3] : 'Loading.....'} />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="tag5">Hashtag:</label>
+                        <input
                             type="text"
                             name="tag5"
                             onChange={this.handleChange}
-                            value={ this.state.hashTags ? this.state.hashTags[4] : 'Loading.....' } />
-                        </li>
-                    </ul>
-                </div>
-                <button type="submit">Post It!</button>
+                            value={this.state.hashTags ? this.state.hashTags[4] : 'Loading.....'} />
+                    </div>
+                    <button type="submit">Post It!</button>
                 </form>
             </div>
         )

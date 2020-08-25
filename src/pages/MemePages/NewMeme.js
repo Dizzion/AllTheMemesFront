@@ -64,39 +64,44 @@ export default class NewMeme extends Component {
                             value={this.state.url} />
                     </div>
                     <div className="form-input">
-                        <label htmlFor="tags">Hashtags:</label>
-                        <ul name="tags">
-                            <li><input
-                                    type="text"
-                                    name="tag1"
-                                    onChange={this.handleChange}
-                                    value={this.state.hashTags[0]} />
-                            </li>
-                            <li><input
-                                    type="text"
-                                    name="tag2"
-                                    onChange={this.handleChange}
-                                    value={this.state.hashTags[1]} />
-                            </li>
-                            <li><input
-                                    type="text"
-                                    name="tag3"
-                                    onChange={this.handleChange}
-                                    value={this.state.hashTags[2]} />
-                            </li>
-                            <li><input
-                                    type="text"
-                                    name="tag4"
-                                    onChange={this.handleChange}
-                                    value={this.state.hashTags[3]} />
-                            </li>
-                            <li><input
-                                    type="text"
-                                    name="tag5"
-                                    onChange={this.handleChange}
-                                    value={this.state.hashTags[4]} />
-                            </li>
-                        </ul>
+                        <label htmlFor="tag1">Hashtag:</label>
+                        <input
+                            type="text"
+                            name="tag1"
+                            onChange={this.handleChange}
+                            value={this.state.hashTags ? this.state.hashTags[0] : 'Loading.....'} />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="tag2">Hashtag:</label>
+                        <input
+                            type="text"
+                            name="tag2"
+                            onChange={this.handleChange}
+                            value={this.state.hashTags ? this.state.hashTags[1] : 'Loading.....'} />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="tag3">Hashtag:</label>
+                        <input
+                            type="text"
+                            name="tag3"
+                            onChange={this.handleChange}
+                            value={this.state.hashTags ? this.state.hashTags[2] : 'Loading.....'} />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="tag4">Hashtag:</label>
+                        <input
+                            type="text"
+                            name="tag4"
+                            onChange={this.handleChange}
+                            value={this.state.hashTags ? this.state.hashTags[3] : 'Loading.....'} />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="tag5">Hashtag:</label>
+                        <input
+                            type="text"
+                            name="tag5"
+                            onChange={this.handleChange}
+                            value={this.state.hashTags ? this.state.hashTags[4] : 'Loading.....'} />
                     </div>
                     <button type="submit">Post It!</button>
                 </form>

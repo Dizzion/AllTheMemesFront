@@ -3,7 +3,7 @@ import axios from 'axios'
 const url = `https://localhost:8080/api/auth`
 
 class AuthService {
-    login(username, password) {
+    static login(username, password) {
         return axios.post(`${url}/login`, {username, password})
             .then(res => {
                 if(res.data.accessToken) {
@@ -13,17 +13,17 @@ class AuthService {
             })
     }
 
-    logout() {
+    static logout() {
         sessionStorage.removeItem("user")
     }
 
-    register(username, email, password) {
+    static signup(username, email, password) {
         return axios.post(`${url}/signup`, {
             username, email, password
         })
     }
 
-    getCurrentUser() {
+    static getCurrentUser() {
         return JSON.parse(sessionStorage.getItem("user"))
     }
 }

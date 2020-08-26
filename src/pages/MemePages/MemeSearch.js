@@ -28,9 +28,9 @@ class MemeSearch extends Component {
             })
         }
         return (
-            <>
+            <div className="card-group row row-cols-1 row-cols-md-4 container-fluid">
                 {this.state.memes ? memeList : 'No Memes Found with that Tag!'}
-            </>
+            </div>
         )
     }
 }

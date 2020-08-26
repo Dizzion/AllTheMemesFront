@@ -58,58 +58,71 @@ export default class NewMeme extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container-fluid mt-5">
                 <h2>Submit a New Meme!</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-input">
-                        <label htmlFor="url">URL:</label>
+                <form className="form-signin form-col" onSubmit={this.handleSubmit}>
+                    <div className="form-label-group">
+                        <label for="url">URL:</label>
                         <input
+                            placeholder="URL"
                             type="text"
                             name="url"
+                            id="url"
+                            className="form-control"
                             onChange={this.handleChange}
                             value={this.state.url} />
                     </div>
-                    <div className="form-input">
-                        <label htmlFor="tag1">Hashtag:</label>
+                    <div className="form-label-group">
+                        <label for="tag1">Hashtag:</label>
                         <input
+                            placeholder="#"
                             type="text"
                             name="tag1"
+                            className="form-control"
                             onChange={this.handleChange}
                             value={this.state.hashTags ? this.state.hashTags[0] : 'Loading.....'} />
                     </div>
-                    <div className="form-input">
-                        <label htmlFor="tag2">Hashtag:</label>
+                    <div className="form-label-group">
+                        <label for="tag2">Hashtag:</label>
                         <input
+                            placeholder="#"
                             type="text"
                             name="tag2"
+                            className="form-control"
                             onChange={this.handleChange}
                             value={this.state.hashTags ? this.state.hashTags[1] : 'Loading.....'} />
                     </div>
-                    <div className="form-input">
-                        <label htmlFor="tag3">Hashtag:</label>
+                    <div className="form-label-group">
+                        <label for="tag3">Hashtag:</label>
                         <input
+                            placeholder="#"
                             type="text"
                             name="tag3"
+                            className="form-control"
                             onChange={this.handleChange}
                             value={this.state.hashTags ? this.state.hashTags[2] : 'Loading.....'} />
                     </div>
-                    <div className="form-input">
-                        <label htmlFor="tag4">Hashtag:</label>
+                    <div className="form-label-group">
+                        <label for="tag4">Hashtag:</label>
                         <input
+                            placeholder="#"
                             type="text"
                             name="tag4"
+                            className="form-control"
                             onChange={this.handleChange}
                             value={this.state.hashTags ? this.state.hashTags[3] : 'Loading.....'} />
                     </div>
-                    <div className="form-input">
-                        <label htmlFor="tag5">Hashtag:</label>
+                    <div className="form-label-group">
+                        <label for="tag5">Hashtag:</label>
                         <input
+                            placeholder="#"
                             type="text"
                             name="tag5"
+                            className="form-control"
                             onChange={this.handleChange}
                             value={this.state.hashTags ? this.state.hashTags[4] : 'Loading.....'} />
                     </div>
-                    <button type="submit">Post It!</button>
+                    <button className="btn btn-lg btn-success btn-block" type="submit">Post It!</button>
                 </form>
             </div>
         )

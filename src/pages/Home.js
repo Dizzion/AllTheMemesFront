@@ -23,7 +23,7 @@ class Home extends Component {
             </Link>
         })
         return (
-            <div>
+            <div className="card-group row row-cols-1 row-cols-md-4 container-fluid mt-5">
                 {this.state.memes ? memeList : 'Loading.....' }
             </div>
         )

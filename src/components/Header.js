@@ -18,6 +18,12 @@ const Header = (props) => {
             <div className="routes">
                 <ul>
 
+                    {props.user.roles[0] === "ROLE_ADMIN" || props.user.roles[0] === "ROLE_MODERATOR" ?
+                        <li><Link to={`/dashboard`}>User Dashboard</Link></li>
+                    :
+                        <></>
+                    }
+
                     <li>
                         <Link to={search ?
                             `/memes/search/${search}`
@@ -34,7 +40,7 @@ const Header = (props) => {
                         <>
                             <li><Link to={'/memes/new'}>Add a Meme!</Link></li>
                             <li><Link to={'/profile'}>Profile</Link></li>
-                            <li><button onClick={props.logout}>Logout</button></li>
+                            <li><Link onClick={props.logout}>Logout</Link></li>
                         </>
                         :
                         <>

@@ -8,10 +8,15 @@ class LikeDis extends Component {
     render() {
         return (
             <div>
-                <img src="/like-flat.png" alt="Likes"/>
-                <p>{this.props.likes}</p>
-                <img src="/dislike-flat.png" alt="Dislikes"/>
-                <p>{this.props.dislikes}</p>
+                <button onClick={this.props.increaseLikes}>
+                    <img src="/like-flat.png" alt="Likes"/>
+                    <p>{this.props.likes}</p>
+                </button>
+                
+                <button onClick={this.props.increaseDislikes}>
+                    <img src="/dislike-flat.png" alt="Dislikes"/>
+                    <p>{this.props.dislikes}</p>
+                </button>
             </div>
         )
     }

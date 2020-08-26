@@ -32,6 +32,14 @@ class MemeModel {
         let request = axios.delete(`${url}/memes/${id}`, { headers: AuthHeader() })
         return request
     }
+    static likes = (id, memeData) => {
+        let request = axios.put(`${url}/memes/likes/${id}`, memeData)
+        return request
+    }
+    static disLikes = (id, memeData) => {
+        let request = axios.put(`${url}/memes/disLikes/${id}`, memeData)
+        return request
+    }
 }
 
 export default MemeModel

@@ -21,11 +21,11 @@ class MemeModel {
         return request
     }
     static create = (memeData) => {
-        let request = axios.post(`${url}/memes`, { headers: AuthHeader() } , memeData)
+        let request = axios.post(`${url}/memes`, memeData, { headers: AuthHeader() } )
         return request
     }
     static update = (id, memeData) => {
-        let request = axios.put(`${url}/memes/${id}`, { headers: AuthHeader() }, memeData)
+        let request = axios.put(`${url}/memes/${id}`, memeData, { headers: AuthHeader() })
         return request
     }
     static delete = (id) => {

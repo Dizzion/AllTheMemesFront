@@ -5,7 +5,9 @@ class Hashtag extends Component {
 
     render() {
         let tagList = this.props.tags.map((tag, i) => {
-            return <li key={i}><Link to={`/memes/search/${tag}`}>#{tag}</Link></li>
+            if (tag !== "") {
+                return <li key={i}><Link to={`/memes/search/${tag}`}>#{tag}</Link></li>
+            }
         })
 
         return (

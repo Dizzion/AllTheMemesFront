@@ -9,7 +9,7 @@ class NewComment extends Component {
     }
 
     componentDidMount() {
-        const user = JSON.parse(sessionStorage.getItem("user"))
+        const user = AuthService.getCurrentUser()
         if (user && user.username) {
             this.setState({
                 userPosted: user.username

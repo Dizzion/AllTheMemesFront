@@ -17,7 +17,13 @@ class Login extends Component {
         e.preventDefault()
 
         AuthService.login(this.state.username, this.state.password)
-            .then(data => this.props.history.push('/memes'))
+            .then(res => {
+                if(!res.data.token) {
+                    return false
+                }
+                this.props.storeUser(res.data)
+                this.props.history.push('/memes')
+            })
             .catch(err => console.log(err))
     }
 

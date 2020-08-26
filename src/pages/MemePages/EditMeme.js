@@ -63,7 +63,11 @@ export default class EditMeme extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-
+        let hashTags = []
+        this.state.hashTags.forEach((tag) => {
+            if (tag !== '') hashTags.push(tag)
+        })
+        this.setState({hashTags})
         MemeModel.update(this.state)
             .then(data => this.props.history.push(`/memes/${this.props.match.params.id}`))
     }
@@ -71,7 +75,7 @@ export default class EditMeme extends Component {
     render() {
         return (
             <div>
-                <img src={this.state.url ? this.state.url : 'Loading.....'} />
+                <img src={this.state.url ? this.state.url : 'Loading.....'}  alt=""/>
                 <h2>Edit the HashTags of this Meme</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-input">

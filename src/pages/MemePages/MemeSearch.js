@@ -14,18 +14,22 @@ class MemeSearch extends Component {
 
     fetchData = () => {
         MemeModel.search(this.props.match.params.hashtag)
-            .then(data => this.setState({ 
-                memes: data.data }))
+            .then(data => this.setState({
+                memes: data.data
+            }))
     }
     render() {
-        let memeList = this.state.memes.map((meme, i) => {
-            return <Link to={`/memes/${ meme.id }`} key={i}>
-                <MemeImg url={ meme.url } />
-            </Link>
-        })
+        let memeList
+        if (this.state.memes) {
+            memeList = this.state.memes.map((meme, i) => {
+                return <Link to={`/memes/${meme.id}`} key={i}>
+                    <MemeImg url={meme.url} />
+                </Link>
+            })
+        }
         return (
             <>
-                {this.state.memes ? memeList : 'Loading.....'}
+                {this.state.memes ? memeList : 'No Memes Found with that Tag!'}
             </>
         )
     }

@@ -46,6 +46,12 @@ export default class NewMeme extends Component {
     }
 
     handleSubmit = (e) => {
+        e.preventDefault()
+        let hashTags = []
+        this.state.hashTags.forEach((tag) => {
+            if (tag !== '') hashTags.push(tag)
+        })
+        this.setState({hashTags})
         MemeModel.create(this.state)
             .then(data => this.props.history.push('/memes'))
     }

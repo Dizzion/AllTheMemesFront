@@ -51,7 +51,7 @@ class MemeShow extends Component {
             return <Comment {...comment} key={i}/>
         })
         return (
-            <div>
+            <div className="container">
                 {this.state.url ? <MemeImg url={this.state.url} /> : 'Loading.....'}
                 {this.state.tags ? <Hashtag tags={this.state.tags} /> : 'Loading.....'}
                 {this.state.url ? <LikeDis increaseLikes={this.increaseLikes} likes={this.state.likes} increaseDislikes={this.increaseDislikes} dislikes={this.state.disLikes} /> : 'Loading.....'}

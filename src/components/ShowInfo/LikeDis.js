@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 
 class LikeDis extends Component {
 
-    // handleOnClickLike = (e) => {
-
-    // }
     render() {
         return (
-            <div>
-                    <p><img className="rounded-circle img-thumbnail" onClick={this.props.increaseLikes} src="/like-flat.png" alt="Likes"/> 
-                    {this.props.likes}</p>
-                    <p><img className="rounded-circle img-thumbnail" onClick={this.props.increaseDislikes} src="/dislike-flat.png" alt="Dislikes"/>
-                    {this.props.dislikes}</p>
+            <div className="container">
+                <div className="row row-col-2 align-items-center">
+                    <p className="col"><img className="rounded-circle img-thumbnail" onClick={this.props.increaseLikes} src="/like-flat.png" alt="Likes"/> 
+                    </p><p className="col">{this.props.likes}</p>
+                    <p className="col"><img className="rounded-circle img-thumbnail" onClick={this.props.increaseDislikes} src="/dislike-flat.png" alt="Dislikes"/>
+                    </p><p className="col">{this.props.dislikes}</p>
+                </div>    
             </div>
         )
     }

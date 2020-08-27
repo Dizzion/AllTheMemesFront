@@ -60,6 +60,7 @@ export default class NewMeme extends Component {
         return (
             <div className="container-fluid mt-5">
                 <h2>Submit a New Meme!</h2>
+                <img src={this.state.url} alt=""/>
                 <form className="form-signin form-col" onSubmit={this.handleSubmit}>
                     <div className="form-label-group">
                         <label for="url">URL:</label>

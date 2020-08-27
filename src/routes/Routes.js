@@ -6,6 +6,7 @@ import MemeSearch from '../pages/MemePages/MemeSearch'
 import MemeShow from '../pages/MemePages/MemeShow'
 import NewMeme from '../pages/MemePages/NewMeme'
 import EditMeme from '../pages/MemePages/EditMeme'
+import MemeCreator from '../pages/MemePages/MemeCreator'
 
 import Login from '../pages/AuthPages/Login'
 import Signup from '../pages/AuthPages/Signup'
@@ -27,6 +28,7 @@ export default (props) => (
         } } /> 
         <Route exact path='/memes/search/:hashtag' component={ MemeSearch } />
         <Route path='/memes/new' component={ NewMeme } />
+        <Route path='/memes/create' component={ MemeCreator } />
         <Route exact path='/memes/:id' component={ MemeShow } />
         <Route path='/memes/:id/edit' component={ EditMeme } />
     </Switch>

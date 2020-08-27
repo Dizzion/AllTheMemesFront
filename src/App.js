@@ -21,7 +21,7 @@ function App(props) {
   }
 
   return (
-    <div className="App">
+    <div className="App text-center">
       <Header user={user} logout={logout} />
       <Routes
         user={user}

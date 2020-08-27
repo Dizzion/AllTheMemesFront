@@ -11,12 +11,10 @@ import MemeCreator from '../pages/MemePages/MemeCreator'
 import Login from '../pages/AuthPages/Login'
 import Signup from '../pages/AuthPages/Signup'
 import Profile from '../pages/AuthPages/Profile'
-import UserDashboard from '../pages/AuthPages/UserDashboard'
 
 export default (props) => (
     <Switch>
         <Route exact path='/memes' component={ Home } />
-        <Route path='/dashboard' component={ UserDashboard } />
         <Route path='/signup' component={ Signup } />
         <Route path='/profile' component={ Profile } />
         <Route path='/login' render={ (routeComponentProps) => {

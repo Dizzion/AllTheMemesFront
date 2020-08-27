@@ -8,7 +8,6 @@ class AuthService {
             
     }
 
-
     static signup(username, email, password) {
         return axios.post(`${url}/signup`, {
             username, email, password
@@ -16,7 +15,7 @@ class AuthService {
     }
 
     static getCurrentUser() {
-        return JSON.parse(localStorage.getItem("user"))
+        return JSON.parse(sessionStorage.getItem("user"))
     }
 }
 

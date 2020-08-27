@@ -26,16 +26,10 @@ const Header = (props) => {
 
                         {props.user ?
                             <>
-                                {props.user.roles[0] === "ROLE_ADMIN" || props.user.roles[0] === "ROLE_MODERATOR" ?
-                                        <li className="nav-item active"><Link className="nav-link" to={`/dashboard`}>User Dashboard</Link></li>
-                                        :
-                                        <></>
-                                }
-
                                 <li className="navbar-item"><Link className="nav-link" to={'/memes/new'}>Add a Meme!</Link></li>
                                 <li className="navbar-item"><Link className="nav-link" to={'/memes/create'}>Create a Meme!</Link></li>
                                 <li className="navbar-item"><Link className="nav-link" to={'/profile'}>Profile</Link></li>
-                                <li className="navbar-item"><Link className="nav-link" onClick={props.logout}>Logout</Link></li>
+                                <li className="navbar-item"><button className="nav-link btn" onClick={props.logout}>Logout</button></li>
                             </>
                             :
                             <>

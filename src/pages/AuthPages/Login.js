@@ -32,7 +32,7 @@ class Login extends Component {
             <div className="body">
                 <form className="form-signin" onSubmit={this.handleSubmit}>
                     <h1 className="h3 mb-3 font-weight-normal">Please login</h1> 
-                        <label for="username" className="sr-only">Username</label>
+                        <label htmlFor="username" className="sr-only">Username</label>
                         <input 
                             type="text"
                             name="username"
@@ -41,7 +41,7 @@ class Login extends Component {
                             onChange={this.handleChange}
                             value={this.state.username} 
                             placeholder="Username" />
-                        <label for="password" className="sr-only">Password</label>
+                        <label htmlFor="password" className="sr-only">Password</label>
                         <input
                             type="password"
                             name="password"

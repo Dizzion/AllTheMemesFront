@@ -42,7 +42,7 @@ class MemeShow extends Component {
     increaseDislikes = (e) => {
         e.preventDefault()
         this.setState({disLikes: this.state.disLikes + 1})
-        MemeModel.likes(this.props.match.params.id, this.state)
+        MemeModel.disLikes(this.props.match.params.id, this.state)
             .then(res => this.props.history.push(`/memes/${this.props.match.params.id}`))
     }
 

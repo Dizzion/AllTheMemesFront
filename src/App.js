@@ -13,10 +13,10 @@ function App(props) {
     setUser(user)
   }
 
-  const logout = (e) => {
+  const logout = async (e) => {
     e.preventDefault()
-    sessionStorage.clear()
-    setUser(null)
+    await sessionStorage.clear()
+    await setUser(null)
     props.history.push('/memes')
   }
 

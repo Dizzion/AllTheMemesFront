@@ -32,17 +32,17 @@ class MemeShow extends Component {
              }))
     }
 
-    increaseLikes = (e) => {
+    increaseLikes = async (e) => {
         e.preventDefault()
-        this.setState({likes: this.state.likes + 1})
-        MemeModel.likes(this.props.match.params.id, this.state)
+        await this.setState({likes: this.state.likes + 1})
+        await MemeModel.likes(this.props.match.params.id, this.state)
             .then(res => this.props.history.push(`/memes/${this.props.match.params.id}`))
     }
 
-    increaseDislikes = (e) => {
+    increaseDislikes = async (e) => {
         e.preventDefault()
-        this.setState({disLikes: this.state.disLikes + 1})
-        MemeModel.disLikes(this.props.match.params.id, this.state)
+        await this.setState({disLikes: this.state.disLikes + 1})
+        await MemeModel.disLikes(this.props.match.params.id, this.state)
             .then(res => this.props.history.push(`/memes/${this.props.match.params.id}`))
     }
 

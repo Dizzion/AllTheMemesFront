@@ -38,26 +38,31 @@ class NewComment extends Component {
 
     render() {
         return (
-            <div>
-                <h4>New Comment</h4>
+            <div className="container mb-5">
+                <h1 className="h3 mt-5 mb-3 font-weight-normal">New Comment</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="form-input">
-                        <label htmlFor="body">Body:</label>
+                    <div className="form-label-group">
+                        <label htmlFor="body">Body</label>
                         <textarea
+                            className="form-control"
                             id="body"
                             name="body"
+                            rows="4"
                             onChange={this.handleChange}
                             value={this.state.body} />
-                    </div>
-                    <div className="form-input">
-                        <label htmlFor="userPosted">User:</label>
-                        <input 
+                        <label htmlFor="userPosted">User</label>
+                        <input
+                            className="form-control" 
                             id="userPosted"
                             type="text"
                             name="userPosted"
                             value={this.state.userPosted ? this.state.userPosted : 'Anonymous'}
                             readOnly />
                     </div>
+                    <button 
+                        type="submit"
+                        className="btn btn-secondary mb-2"
+                    >Post Comment!</button>
                 </form>
             </div>
         )

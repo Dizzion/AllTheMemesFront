@@ -13,9 +13,9 @@ class Hashtag extends Component {
 
         return (
             <div className="row justify-content-md-center mb-4">
-            <ul className="list-group list-group-horizontal">
-                { tagList }
-            </ul>
+                <ul className="list-group list-group-horizontal">
+                    {tagList}
+                </ul>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './LikeDis.scss'
 
 class LikeDis extends Component {
 
@@ -6,10 +7,12 @@ class LikeDis extends Component {
         return (
             <div className="container">
                 <div className="row row-col-2 align-items-center">
-                    <p className="col"><img className="rounded-circle img-thumbnail" onClick={this.props.increaseLikes} src="/like-flat.png" alt="Likes"/> 
-                    </p><p className="col">{this.props.likes}</p>
-                    <p className="col"><img className="rounded-circle img-thumbnail" onClick={this.props.increaseDislikes} src="/dislike-flat.png" alt="Dislikes"/>
-                    </p><p className="col">{this.props.dislikes}</p>
+                    <img className="col rounded-circle img-thumbnail" onClick={this.props.increaseLikes} src="/like-flat.png" alt="Likes"/> 
+                    <p className="col-md-auto img-tag">{this.props.likes}</p>
+                    <div className="col col-lg-2"></div>
+                    <img className="col rounded-circle img-thumbnail" onClick={this.props.increaseDislikes} src="/dislike-flat.png" alt="Dislikes"/>
+                    <p className="col-md-auto img-tag">{this.props.dislikes}</p>
+                    
                 </div>    
             </div>
         )

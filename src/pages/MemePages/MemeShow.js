@@ -5,6 +5,7 @@ import Hashtag from '../../components/ShowInfo/Hashtag'
 import LikeDis from '../../components/ShowInfo/LikeDis'
 import MemeModel from '../../model/MemesModel'
 import NewComment from '../../components/ShowInfo/NewComment'
+import AuthService from '../../service/AuthService'
 
 class MemeShow extends Component {
     state = {
@@ -32,6 +33,12 @@ class MemeShow extends Component {
              }))
     }
 
+    handleClick = (e) => {
+        e.preventDefault()
+        MemeModel.delete(this.props.match.params.id)
+            .then(data => this.props.history.push('/memes'))
+    }
+
     increaseLikes = async (e) => {
         e.preventDefault()
         await this.setState({likes: this.state.likes + 1})
@@ -50,10 +57,17 @@ class MemeShow extends Component {
         let commentList = this.state.comments.map((comment, i) => {
             return <Comment {...comment} key={i}/>
         })
+        const user = AuthService.getCurrentUser()
         return (
             <div className="container">
+                {user && (user.roles[0] === "ROLE_MODERATOR" || user.roles[0] === "ROLE_ADMIN"
+                        || user.roles[1] === "ROLE_MODERATOR" || user.roles[1] === "ROLE_ADMIN"
+                        || user.roles[2] === "ROLE_MODERATOR" || user.roles[2] === "ROLE_ADMIN") ?
+                    <button className="btn btn-md btn-danger btn-block mt-3" onClick={this.handleClick}>Delete!</button>
+                :
+                    <></>}
                 {this.state.url ? <MemeImg url={this.state.url} /> : 'Loading.....'}
-                {this.state.tags ? <Hashtag tags={this.state.tags} /> : 'Loading.....'}
+                {this.state.tags ? <Hashtag tags={this.state.tags} memeId={this.props.match.params.id}/> : 'Loading.....'}
                 {this.state.url ? <LikeDis increaseLikes={this.increaseLikes} likes={this.state.likes} increaseDislikes={this.increaseDislikes} dislikes={this.state.disLikes} /> : 'Loading.....'}
                 <NewComment />
                 <div className="card-group">{this.state.comments ? commentList : 'Loading.....'}</div>

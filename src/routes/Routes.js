@@ -27,7 +27,7 @@ export default (props) => (
         <Route exact path='/memes/search/:hashtag' component={ MemeSearch } />
         <Route path='/memes/new' component={ NewMeme } />
         <Route path='/memes/create' component={ MemeCreator } />
-        <Route exact path='/memes/:id' component={ MemeShow } />
         <Route path='/memes/:id/edit' component={ EditMeme } />
+        <Route exact path='/memes/:id' component={ MemeShow } />
     </Switch>
 )

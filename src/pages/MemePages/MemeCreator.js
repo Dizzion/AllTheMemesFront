@@ -28,7 +28,9 @@ const photos = [
     { src: '/images/MockingSpongebob.jpg' },
     { src: '/images/patrick.jpg' },
     { src: '/images/loungeCat.jpg' },
-    { src: '/images/drake.jpg' }
+    { src: '/images/drake.jpg' },
+    { src: '/images/Grumpy-Cat-Bed.jpg' },
+    { src: '/images/jim.jpg' }
 ]
 
 const initialState = {

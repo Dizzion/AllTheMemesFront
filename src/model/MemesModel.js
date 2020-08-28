@@ -1,7 +1,7 @@
 import axios from 'axios'
 import AuthHeader from '../service/AuthHeader'
 
-const url = `http://localhost:8080/api/v1`
+const url = `https://stark-spire-25667.herokuapp.com/api/v1`
 
 class MemeModel {
     static all = () => {

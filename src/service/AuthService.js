@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = `http://localhost:8080/api/auth`
+const url = `https://stark-spire-25667.herokuapp.com/api/auth`
 
 class AuthService {
     static login(username, password) {

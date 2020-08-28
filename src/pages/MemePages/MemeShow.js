@@ -56,7 +56,7 @@ class MemeShow extends Component {
                 {this.state.tags ? <Hashtag tags={this.state.tags} /> : 'Loading.....'}
                 {this.state.url ? <LikeDis increaseLikes={this.increaseLikes} likes={this.state.likes} increaseDislikes={this.increaseDislikes} dislikes={this.state.disLikes} /> : 'Loading.....'}
                 <NewComment />
-                {this.state.comments ? commentList : 'Loading.....'}
+                <div className="card-group">{this.state.comments ? commentList : 'Loading.....'}</div>
             </div>
         )
     }

@@ -8,10 +8,10 @@ class LikeDis extends Component {
             <div className="container">
                 <div className="row row-col-2 align-items-center">
                     <img className="col rounded-circle img-thumbnail" onClick={this.props.increaseLikes} src="/like-flat.png" alt="Likes"/> 
-                    <p className="col-md-auto img-tag">{this.props.likes}</p>
+                    <p className="col img-tag">{this.props.likes}</p>
                     <div className="col col-lg-2"></div>
                     <img className="col rounded-circle img-thumbnail" onClick={this.props.increaseDislikes} src="/dislike-flat.png" alt="Dislikes"/>
-                    <p className="col-md-auto img-tag">{this.props.dislikes}</p>
+                    <p className="col img-tag">{this.props.dislikes}</p>
                     
                 </div>    
             </div>

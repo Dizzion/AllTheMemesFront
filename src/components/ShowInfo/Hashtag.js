@@ -15,7 +15,7 @@ class Hashtag extends Component {
             <div className="row justify-content-md-center mb-4">
                 <ul className="list-group list-group-horizontal">
                     {tagList}
-                    <li className="list-group-item"><Link to={`/memes/${this.props.memeId}/edit`}>Edit Hashtags</Link></li>
+                    <li className="list-group-item" hidden><Link to={`/memes/${this.props.memeId}/edit`}>Edit Hashtags</Link></li>
                 </ul>
             </div>
         )

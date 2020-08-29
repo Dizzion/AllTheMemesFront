@@ -45,13 +45,13 @@ export default class NewMeme extends Component {
         }
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault()
         let hashTags = []
-        this.state.hashTags.forEach((tag) => {
-            if (tag !== '') hashTags.splice(tag, 1)
+        await this.state.hashTags.forEach((tag) => {
+            if (tag !== '') hashTags.push(tag)
         })
-        this.setState({hashTags})
+        await this.setState({hashTags})
         MemeModel.create(this.state)
             .then(data => this.props.history.push('/memes'))
     }
@@ -69,6 +69,7 @@ export default class NewMeme extends Component {
                             type="text"
                             name="url"
                             id="url"
+                            required
                             className="form-control"
                             onChange={this.handleChange}
                             value={this.state.url} />
@@ -79,9 +80,10 @@ export default class NewMeme extends Component {
                             placeholder="#"
                             type="text"
                             name="tag1"
+                            required
                             className="form-control"
                             onChange={this.handleChange}
-                            value={this.state.hashTags ? this.state.hashTags[0] : 'Loading.....'} />
+                            value={this.state.hashTags[0]} />
                     </div>
                     <div className="form-label-group">
                         <label htmlFor="tag2">Hashtag:</label>
@@ -91,7 +93,7 @@ export default class NewMeme extends Component {
                             name="tag2"
                             className="form-control"
                             onChange={this.handleChange}
-                            value={this.state.hashTags ? this.state.hashTags[1] : 'Loading.....'} />
+                            value={this.state.hashTags[1]} />
                     </div>
                     <div className="form-label-group">
                         <label htmlFor="tag3">Hashtag:</label>
@@ -101,7 +103,7 @@ export default class NewMeme extends Component {
                             name="tag3"
                             className="form-control"
                             onChange={this.handleChange}
-                            value={this.state.hashTags ? this.state.hashTags[2] : 'Loading.....'} />
+                            value={this.state.hashTags[2]} />
                     </div>
                     <div className="form-label-group">
                         <label htmlFor="tag4">Hashtag:</label>
@@ -111,7 +113,7 @@ export default class NewMeme extends Component {
                             name="tag4"
                             className="form-control"
                             onChange={this.handleChange}
-                            value={this.state.hashTags ? this.state.hashTags[3] : 'Loading.....'} />
+                            value={this.state.hashTags[3]} />
                     </div>
                     <div className="form-label-group">
                         <label htmlFor="tag5">Hashtag:</label>
@@ -121,7 +123,7 @@ export default class NewMeme extends Component {
                             name="tag5"
                             className="form-control"
                             onChange={this.handleChange}
-                            value={this.state.hashTags ? this.state.hashTags[4] : 'Loading.....'} />
+                            value={this.state.hashTags[4]} />
                     </div>
                     <button className="btn btn-lg btn-success btn-block" type="submit">Post It!</button>
                 </form>
